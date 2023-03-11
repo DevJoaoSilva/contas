@@ -44,7 +44,7 @@ body{
 #menu-box > #menu-header{
     height: 60px;
     line-height: 60px;
-    padding-left: 10px;
+    padding-left: 15px;
     background-color: var(--cor-menu-header);
     font-size: 1.1em;
     font-weight: bold;
