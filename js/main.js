@@ -20,6 +20,6 @@ function myFunction(mediachange) { // Media change - Menu script
     document.querySelector('#menu-box').style.display = 'block'
  }
 }
-var mediachange = window.matchMedia("(max-width: 767px)")
+var mediachange = window.matchMedia("(max-width: 992px)")
 myFunction(mediachange) // Call listener function at run time
 mediachange.addListener(myFunction) // Attach listener function on state change
