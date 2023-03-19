@@ -3,10 +3,15 @@
 :root{
     --cor-menu: #222222;
     --cor-menu-header: #333333;
-    --cor-hovermenu: #84B026;
+    --cor-hovermenu: white;
+    --cor-font-menu: white;
+    --cor_menu-shadow: rgb(0, 0, 0, 0.5);
+    
     --cor-header-cont: #0870BE;
-    --cor-back: #f0f2f4;
+    --cor-backntitle: #f0f2f4;
     --corfont-content: #707476;
+    --cor-content: white;
+    --cor-border: #d9d9dd;
 }
 *{
     margin: 0px;
@@ -18,38 +23,30 @@ body{
     font-size: 1em;
 }
 #container{
+    display: flex;
     position: relative;
 }
 /* ----------------Menu---------------- */
-#container > #menu-logo{
-    position: fixed;
-    z-index: 2;
-    background-color: var(--cor-header-cont);
-    line-height: 60px;
-    left: 10px;
-    color: white;
-    cursor: pointer;
-    user-select: none;
-}
 #container > #menu-box{
     position: fixed;
     z-index: 2;
     width: 50vw;
+    max-width: 350px;
     height: 100vh;
     background-color: var(--cor-menu);
-    color: white;
+    color: var(--cor-font-menu);
     display: none;
-    box-shadow: 1px 0px 10px rgb(0, 0, 0, .5);
 }
 #menu-box > #menu-header{
     height: 60px;
     line-height: 60px;
     padding-left: 15px;
     background-color: var(--cor-menu-header);
+    color: var(--cor-fontmenu-header);
     font-size: 1.1em;
     font-weight: bold;
     text-transform: uppercase;
-    box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px var(--cor_menu-shadow);
 }
 #menu-box > menu{
     margin: 10px;
@@ -57,8 +54,7 @@ body{
 }
 #menu-box > menu a{
     display: block;
-    font-weight: 500;
-    color: white;
+    color: var(--cor-font-menu);
     text-decoration: none;
     padding: 10px 10px;
     margin: 10px 0px;
@@ -66,12 +62,15 @@ body{
     cursor: pointer;
 }
 #menu-box > menu a:hover{
-    background-color: white;
-    color: var(--cor-menu-header);
+    background-color: var(--cor-hovermenu);
+    color: var(--cor-menu);
     box-shadow: 0px 0px 5px rgb(255, 255, 255, 0.3);
+    font-weight: 600;
 }
-.menu-active{
-    background-color: var(--cor-menu-header);
+#menu-box > menu a.menu-active{
+    background-color: var(--cor-hovermenu);
+    color: var(--cor-menu);
+    font-weight: 600;
     box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.5);
 }
 #menu-box > menu span{
@@ -80,53 +79,111 @@ body{
 }
 /* ----------------Content---------------- */
 #content-section{
-    width: 100%;
     height: 100%;
-    background-color: var(--cor-header-cont);
+    background-color: var(--cor-backntitle);
 }
 #content-header{
     position: fixed;
     width: 100%;
     height: 60px;
     background-color: var(--cor-header-cont);
-    color: white;
+    color: var(--cor-content);
     text-align: center;
     line-height: 60px;
     box-shadow: 0px 3px 10px rgb(0, 0, 0, 0.3);
 }
-#content-body{
-    min-height: 100vh;
-    background-color: var(--cor-back);
-    box-sizing: border-box;
-    padding-top: 60px;
-    padding-bottom: 20px;
+#menu-actv{
+    position: fixed;
+    z-index: 2;
+    background-color: var(--cor-header-cont);
+    line-height: 60px;
+    left: 10px;
+    color: var(--cor-content);
+    cursor: pointer;
+    user-select: none;
 }
 #content-menu{
-    min-height: 50px;
-    background-color: white;
+    min-height: 60px;
+    background-color: var(--cor-content);
+    margin-top: 60px;
     padding: 20px;
-    box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--cor-border);
+    box-shadow: 0px 0px 5px rgb(0, 0, 0, .5);
+}
+#content-menu nav a{
+    color: var(--corfont-content);
+    text-decoration: none;
+    font-weight: 500;
+}
+#content-menu nav a::after{
+    content: ' > ';
+}
+#content-menu nav a:last-child{
+    color: var(--cor-header-cont);
+}
+#content-menu nav a:last-child::after{
+    content: '';
+}
+#content-menu_conf{
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 10px;
+    max-width: calc(85% + 30px);
+    margin: auto;
+    margin-top: 10px;
+}
+#content-body{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    width: 85%;
+    box-sizing: border-box;
+    margin: auto;
+    padding-top: 5px;
+    padding-bottom: 20px;
 }
 .content{
     min-width: 50%;
-    max-width: 85%;
-    background-color: white;
-    margin: auto;
-    margin-top: 20px;
+    background-color: var(--cor-content);
+    margin: 20px auto;
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.3);
     overflow: hidden;
 }
+.content-flex{
+    min-width: 49%;
+    background-color: var(--cor-content);
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.3);
+    overflow: hidden;
+    box-sizing: border-box;
+}
 .content-title{
-    width: calc(100% + 30px);
+    width: calc(100% + 20px);
     height: 30px;
     line-height: 30px;
-    background-color: var(--cor-back);
+    background-color: var(--cor-backntitle);
     color: var(--corfont-content);
     font-size: 1.3em;
     font-weight: 600;
     margin: -15px 0 15px -15px;
     padding-left: 10px;
-    border-bottom: 1px solid #d9d9dd;
+    border-bottom: 1px solid var(--cor-border);
+}
+/*------------ Forms, inputs----------------*/
+input[type=button]{
+    background-color: var(--cor-backntitle);
+    color: var(--cor-header-cont);
+    font-size: .9rem;
+    font-weight: 600;
+    padding: 10px;
+    border: 1px solid var(--cor-backntitle);
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.3);
+    cursor: pointer;
 }

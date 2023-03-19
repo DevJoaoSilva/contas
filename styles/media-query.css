@@ -10,9 +10,6 @@ Grandes telas: acima de 1200px
 */
 
 @media screen and (min-width: 992px) {
-    #container{
-        display: flex;
-    }
     #container > #menu-box{
         position: fixed;
         display: block;
@@ -23,15 +20,16 @@ Grandes telas: acima de 1200px
     #menu-logo{
         display: none;
     }
+    #content-section{
+        width: calc(100%-350px);
+        margin-left: 350px;
+    }
     #content-header{
         z-index: 1;
         width: calc(100vw - 350px);
         left: 350px;
     }
-    #content-body{
-        margin-left: 350px;
-    }
-    .content{
-        max-width: 85%;
+    .content-flex{
+        width: 49%;
     }
 }
