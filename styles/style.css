@@ -187,3 +187,58 @@ input[type=button]{
     box-shadow: 0px 0px 5px rgb(0, 0, 0, 0.3);
     cursor: pointer;
 }
+
+
+/*Modal*/
+.modal{
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, .8);
+}
+.modal span{
+    position: absolute;
+    z-index: 5;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    top: 5px;
+    right: 10%;
+    font-size: 1.4em;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0px;
+}
+.modal_title{
+    margin: -20px -20px 10px;
+    background-color: var(--cor-header-cont);
+    color: white;
+    padding: 5px 20px;
+    font-size: 1.4em;
+    text-align: center;
+}
+.modal_body{
+    width: 50%;
+    margin: auto;
+    border: 1px solid red;
+}
+.modal_content{
+    width: 80%;
+    margin: 20px 0;
+    background-color: white;
+    padding: 20px;
+    text-align: justify;
+    border-radius: 5px;
+    overflow: auto;
+}
